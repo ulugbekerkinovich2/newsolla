@@ -1,0 +1,8 @@
+New registration:
+{
+  "telegram_id": 5204054835,
+  "username": "status_py_developer",
+  "fullname": ".",
+  "register_time": "20:3:2023 --> 15:41:40.307485",
+  "last_login_time": "20:3:2023 --> 15:51:55.378955"
+}
