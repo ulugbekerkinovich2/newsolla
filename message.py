@@ -19,8 +19,8 @@ async def my_func():
 
 async def main():
     while True:
-        now = datetime.datetime.now()
-        await bot.send_message(chat_id=ADMINS, text=f'{now.hour+5, now.minute}  ok')
+        # now = datetime.datetime.now()
+        # await bot.send_message(chat_id=ADMINS, text=f'{now.hour+5, now.minute}  ok')
         await my_func()
         await asyncio.sleep(59)  # sleep for 1 minute
 
