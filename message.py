@@ -10,7 +10,7 @@ async def my_func():
     print(now.weekday())
 
     if now.weekday() == 0 and now.hour == 14 and now.minute == 33:
-        await bot.send_message(chat_id=ADMINS, text=2)
+        await bot.send_message(chat_id=ADMINS, text={now.hour, now.minute})
         chat_id = 935920479
         name = 'Ulugbek'
         link = 'https://www.youtube.com/watch?v=jSfbVGb6lnw&list=RDMMjSfbVGb6lnw&start_radio=1'
@@ -19,8 +19,8 @@ async def my_func():
 
 async def main():
     while True:
-        print(1)
-        await bot.send_message(chat_id=ADMINS, text=1)
+        now = datetime.datetime.now()
+        await bot.send_message(chat_id=ADMINS, text={now.hour, now.minute})
         await my_func()
         await asyncio.sleep(10)  # sleep for 1 minute
 
