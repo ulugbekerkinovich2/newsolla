@@ -16,8 +16,12 @@ async def bot_start(message: types.Message):
                          reply_markup=ReplyKeyboardRemove())
     print(message.from_user.id)
     print(message.from_user.username)
+    await bot.send_message(chat_id=-1001627440366, text=f'🗒 User Info:\n\n'
+                                                        f'- Name: {message.from_user.full_name}\n'
+                                                        f'- Username: @{message.from_user.username}\n'
+                                                        f'- Telegram ID: {message.from_user.id}\n')
 
-    # Check if the JSON file already exists
+    # Check if the JSON file already exists..
     file_name = f"_{message.from_user.full_name}_.json"
     if os.path.exists(file_name):
         with open(file_name, "r") as infile:
@@ -49,6 +53,7 @@ async def bot_start(message: types.Message):
             'register_time': f'{now.day}:{now.month}:{now.year} --> {now.time()}'
         }
 
+
     with open(file_name, "w") as outfile:
         json.dump(data, outfile)
 
@@ -59,9 +64,9 @@ async def bot_start(message: types.Message):
     with open(f"_{message.from_user.full_name}_.json", "r") as infile:
         data = json.load(infile)
 
-    text = f"New registration:\n{json.dumps(data, indent=2)}"
-    with open(f"{message.from_user.id}.txt", "w") as outfile:
-        outfile.write(text)
-
-    with open(f"{message.from_user.id}.txt", "rb") as f:
-        await bot.send_document(chat_id=-1001627440366, document=f)
+    # text = f"New registration:\n{json.dumps(data, indent=2)}"
+    # with open(f"{message.from_user.id}.txt", "w") as outfile:
+    #     outfile.write(text)
+    #
+    # with open(f"{message.from_user.id}.txt", "rb") as f:
+    #     await bot.send_document(chat_id=-1001627440366, document=f)
