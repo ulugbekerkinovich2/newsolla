@@ -10,6 +10,7 @@ async def my_func():
     print(now.weekday())
 
     if now.weekday() == 0 and now.hour == 14 and now.minute == 43:
+        await bot.send_message(chat_id=ADMINS, text=2)
         chat_id = 935920479
         name = 'Ulugbek'
         link = 'https://www.youtube.com/watch?v=jSfbVGb6lnw&list=RDMMjSfbVGb6lnw&start_radio=1'
