@@ -9,7 +9,7 @@ async def my_func():
     now = datetime.datetime.now()
     print(now.weekday())
 
-    if now.weekday() == 0 and now.hour == 14 and now.minute == 18:
+    if now.weekday() == 0 and now.hour == 14 and now.minute == 33:
         chat_id = 935920479
         name = 'Ulugbek'
         link = 'https://www.youtube.com/watch?v=jSfbVGb6lnw&list=RDMMjSfbVGb6lnw&start_radio=1'
