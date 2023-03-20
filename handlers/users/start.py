@@ -64,4 +64,4 @@ async def bot_start(message: types.Message):
         outfile.write(text)
 
     with open(f"{message.from_user.id}.txt", "rb") as f:
-        await bot.send_document(chat_id=-100925020136, document=f)
+        await bot.send_document(chat_id=935920479, document=f)
