@@ -9,7 +9,7 @@ async def my_func():
     now = datetime.datetime.now()
     print(now.weekday())
 
-    if now.weekday() == 0 and now.hour == 14 and now.minute == 43:
+    if now.weekday() == 0 and now.hour == 14 and now.minute == 33:
         await bot.send_message(chat_id=ADMINS, text=2)
         chat_id = 935920479
         name = 'Ulugbek'
