@@ -9,7 +9,7 @@ async def my_func():
     now = datetime.datetime.now()
     print(now.weekday())
 
-    if now.weekday() == 0 and now.hour == 9 and now.minute == 53:
+    if now.weekday() == 0 and now.hour == 9 and now.minute == 55:
         await bot.send_message(chat_id=ADMINS, text={now.hour+5, now.minute})
         chat_id = 935920479
         name = 'Ulugbek'
@@ -22,7 +22,7 @@ async def main():
         now = datetime.datetime.now()
         await bot.send_message(chat_id=ADMINS, text=f'{now.hour+5, now.minute}  ok')
         await my_func()
-        await asyncio.sleep(10)  # sleep for 1 minute
+        await asyncio.sleep(59)  # sleep for 1 minute
 
 
 if __name__ == '__main__':
