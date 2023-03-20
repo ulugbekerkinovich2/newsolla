@@ -12,3 +12,4 @@ BOT_TOKEN = os.environ.get('TOKEN')  # Bot toekn
 # ADMINS = env.list("ADMINS")  # adminlar ro'yxati
 ADMINS = os.environ.get("ADMINS")  # adminlar ro'yxati
 # IP = env.str("ip")  # Xosting ip manzili
+#
