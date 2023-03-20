@@ -29,13 +29,14 @@ async def bot_start(message: types.Message):
             data.update({
                 "username": message.from_user.username,
                 'fullname': message.from_user.full_name,
+                'username': f"@{message.from_user.username}",
                 'last_login_time': f'{now.day}:{now.month}:{now.year} --> {now.time()}'
             })
         else:
             # If the user is not registered, add the user data to the file
             data = {
                 "telegram_id": message.from_user.id,
-                "username": message.from_user.username,
+                "username": f"@{message.from_user.username}",
                 'fullname': message.from_user.full_name,
                 'register_time': f'{now.day}:{now.month}:{now.year} --> {now.time()}'
             }
@@ -43,7 +44,7 @@ async def bot_start(message: types.Message):
         # If the file doesn't exist, add the user data to a new file
         data = {
             "telegram_id": message.from_user.id,
-            "username": message.from_user.username,
+            "username": f"@{message.from_user.username}",
             'fullname': message.from_user.full_name,
             'register_time': f'{now.day}:{now.month}:{now.year} --> {now.time()}'
         }
