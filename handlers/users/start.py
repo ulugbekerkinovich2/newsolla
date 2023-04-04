@@ -1,8 +1,7 @@
 import json
 import os
 import datetime
-import os
-import glob
+
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
 from aiogram.types import ReplyKeyboardRemove
@@ -11,15 +10,7 @@ from data.config import ADMINS
 from loader import dp, bot
 
 
-# @dp.message_handler(text='/users')
-# async def users(message: types.Message):
-#     if f'{message.chat.id}' in ADMINS:
-#         folder_path = "user_data"
-#         files = os.listdir(folder_path)
-#         num_files = len(files)
-#         await bot.send_message(chat_id=ADMINS[0], text=f"There are {num_files} files in the {folder_path} folder.")
-#     else:
-#         await message.answer('siz ushbu buyruqdan foydalana olmaysiz')
+
 
 
 @dp.message_handler(CommandStart())
@@ -36,10 +27,7 @@ async def bot_start(message: types.Message):
                                                    f'- Telegram ID: {message.from_user.id}\n')
 
     # Check if the JSON file already exists..
-    folder_path = 'user_data'
-    os.makedirs(folder_path, exist_ok=True)  # create folder if it doesn't exist
-
-    file_name = os.path.join(folder_path, f"{message.from_user.full_name}.json")
+    file_name = f"_{message.from_user.full_name}_.json"
     if os.path.exists(file_name):
         with open(file_name, "r") as infile:
             data = json.load(infile)
@@ -77,8 +65,7 @@ async def bot_start(message: types.Message):
         await message.answer("Sizning ma'lumotlaringiz muvaffaqiyatli yangilandi!")
     else:
         await message.answer("Siz muvaffaqiyatli ro'yxatdan o'tdingiz!")
-
-    with open(file_name, "r") as infile:
+    with open(f"_{message.from_user.full_name}_.json", "r") as infile:
         data = json.load(infile)
 
     # text = f"New registration:\n{json.dumps(data, indent=2)}"
