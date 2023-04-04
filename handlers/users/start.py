@@ -10,9 +10,6 @@ from data.config import ADMINS
 from loader import dp, bot
 
 
-
-
-
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
     now = datetime.datetime.now()
