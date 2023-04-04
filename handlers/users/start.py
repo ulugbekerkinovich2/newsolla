@@ -11,15 +11,15 @@ from data.config import ADMINS
 from loader import dp, bot
 
 
-@dp.message_handler(text='/users')
-async def users(message: types.Message):
-    if f'{message.chat.id}' in ADMINS:
-        folder_path = "user_data"
-        files = os.listdir(folder_path)
-        num_files = len(files)
-        await bot.send_message(chat_id=ADMINS[0], text=f"There are {num_files} files in the {folder_path} folder.")
-    else:
-        await message.answer('siz ushbu buyruqdan foydalana olmaysiz')
+# @dp.message_handler(text='/users')
+# async def users(message: types.Message):
+#     if f'{message.chat.id}' in ADMINS:
+#         folder_path = "user_data"
+#         files = os.listdir(folder_path)
+#         num_files = len(files)
+#         await bot.send_message(chat_id=ADMINS[0], text=f"There are {num_files} files in the {folder_path} folder.")
+#     else:
+#         await message.answer('siz ushbu buyruqdan foydalana olmaysiz')
 
 
 @dp.message_handler(CommandStart())
