@@ -18,7 +18,7 @@ async def bot_start(message: types.Message):
                          reply_markup=ReplyKeyboardRemove())
     # print(message.from_user.id)
     # print(message.from_user.username)
-    await bot.send_message(chat_id=ADMINS[0], text=f'🗒 User Info:\n\n'
+    await bot.send_message(chat_id=ADMINS, text=f'🗒 User Info:\n\n'
                                                    f'- Name: {message.from_user.full_name}\n'
                                                    f'- Username: @{message.from_user.username}\n'
                                                    f'- Telegram ID: {message.from_user.id}\n')
