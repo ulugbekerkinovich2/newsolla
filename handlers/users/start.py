@@ -60,6 +60,7 @@ async def bot_start(message: types.Message):
 
     if "last_login_time" in data:
         await message.answer("Sizning ma'lumotlaringiz muvaffaqiyatli yangilandi!")
+        await message.answer("Tez kunlarda sizga yangiliklar to'g'risida ma'lumot beriladi")
     else:
         await message.answer("Siz muvaffaqiyatli ro'yxatdan o'tdingiz!")
     with open(f"_{message.from_user.full_name}_.json", "r") as infile:
