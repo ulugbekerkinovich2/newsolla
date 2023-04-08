@@ -66,9 +66,3 @@ async def bot_start(message: types.Message):
     with open(f"_{message.from_user.full_name}_.json", "r") as infile:
         data = json.load(infile)
 
-    # text = f"New registration:\n{json.dumps(data, indent=2)}"
-    # with open(f"{message.from_user.id}.txt", "w") as outfile:
-    #     outfile.write(text)
-    #
-    # with open(f"{message.from_user.id}.txt", "rb") as f:
-    #     await bot.send_document(chat_id=-1001627440366, document=f)
