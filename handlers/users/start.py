@@ -16,8 +16,8 @@ async def bot_start(message: types.Message):
     await message.answer(f"<b>Hayrli kun {message.from_user.full_name}, kuningiz barakali o'tsin</b>",
                          parse_mode='HTML',
                          reply_markup=ReplyKeyboardRemove())
-    print(message.from_user.id)
-    print(message.from_user.username)
+    # print(message.from_user.id)
+    # print(message.from_user.username)
     await bot.send_message(chat_id=ADMINS[0], text=f'🗒 User Info:\n\n'
                                                    f'- Name: {message.from_user.full_name}\n'
                                                    f'- Username: @{message.from_user.username}\n'
